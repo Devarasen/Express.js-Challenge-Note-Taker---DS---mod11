@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Buy Flowers",
+        "text": "Buy before picking up mom",
+        "note_id": "edf875d3-4cda-491a-994e-8a4f6784d82a"
+    },
+    {
+        "title": "Meeting with Tony",
+        "text": "Meet at noon to discuss app",
+        "note_id": "2e5e6230-07a0-475c-a56f-7f1b587f2780"
+    },
+    {
+        "title": "Basketball practice",
+        "text": "8pm every Thursdays",
+        "note_id": "5d31d871-5650-4264-b413-f18ece269cc8"
+    },
+    {
+        "title": "Recycling",
+        "text": "Bring bottles to recycling center after basketball practice",
+        "note_id": "5bfaae8e-318e-4e93-9606-f68bb8d981f3"
+    }
+]
