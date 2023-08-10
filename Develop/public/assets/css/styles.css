@@ -31,9 +31,12 @@ body {
 }
 
 .note-title {
-  height: 50px;
   margin-top: 13px;
+  padding-bottom: 13px;
   font-size: 3rem;
+  line-height: normal;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
 }
 
 .note-title:read-only,
