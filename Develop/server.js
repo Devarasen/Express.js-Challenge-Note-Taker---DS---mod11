@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const { clog } = require('./middleware/clog');
 const api = require('./routes/index.js');
+const app = express();
 
 const PORT = process.env.port || 3001;
 
@@ -26,13 +27,13 @@ app.get('/', (req, res) =>
 );
 
 // GET Route for notes page
-app.get('/feedback', (req, res) =>
+app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-// Wildcard route to direct users to a 404 page
+// Wildcard route to direct users to index.html
 app.get('*', (req, res) => {
-    res.status(404).sendFile(path.join(__dirname, '/public/pages/404.html'))
+    res.sendFile(path.join(__dirname, '/public/index.html'))
 });
 
 app.listen(PORT, () =>
