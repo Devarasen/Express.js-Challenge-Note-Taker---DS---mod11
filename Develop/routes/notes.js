@@ -1,4 +1,5 @@
 const notes = require('express').Router();
+const { v4: uuidv4 } = require('uuid');
 
 //Import helper functions
 const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
@@ -14,12 +15,13 @@ notes.get('/', (req, res) => {
 notes.post('/', (req, res) => {
     console.info(`${req.method} request received to add a tip`);
   
-    const { title, text } = req.body;
+    const { title, text, note_id } = req.body;
   
     if (req.body) {
       const newNote = {
         title,
-        text
+        text,
+        note_id: uuidv4(),
       };
   
       readAndAppend(newNote, './db/db.json');
