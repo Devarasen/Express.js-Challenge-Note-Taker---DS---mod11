@@ -22,6 +22,31 @@ const hide = (elem) => {
   elem.style.display = 'none';
 };
 
+// Set up a click event listener for each note in the list
+const setupNoteClickHandlers = () => {
+  const noteItems = document.querySelectorAll('.list-group-item');
+
+  noteItems.forEach((item) => {
+    item.addEventListener('click', handleNoteClick);
+  });
+};
+
+// Handle the click event on a note
+const handleNoteClick = (e) => {
+  console.log('Note clicked:', e.currentTarget.dataset.note);
+  const clickedNote = JSON.parse(e.currentTarget.dataset.note);
+  console.log('Clicked note data:', clickedNote);
+  setActiveNote(clickedNote);
+};
+
+// Set the active note and render it
+const setActiveNote = (note) => {
+  console.log('Setting active note:', note);
+  activeNote = note;
+  renderActiveNote();
+};
+
+
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
@@ -51,9 +76,10 @@ const deleteNote = (id) =>
   });
 
 const renderActiveNote = () => {
+  console.log('Rendering active note:', activeNote);
   hide(saveNoteBtn);
 
-  if (activeNote.id) {
+  if (activeNote.note_id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
@@ -180,4 +206,6 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-getAndRenderNotes();
+getAndRenderNotes().then(() => {
+  setupNoteClickHandlers();
+});
