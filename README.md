@@ -8,7 +8,7 @@ Express.js Challenge: Note Taker
 
 This app is an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
 
-Heroku URL: https://still-coast-89431-5e7acc18b07c.herokuapp.com/notes
+Heroku URL: https://still-coast-89431-5e7acc18b07c.herokuapp.com
 
 Github Repo: https://github.com/Devarasen/Express.js-Challenge-Note-Taker---DS---mod11
 
